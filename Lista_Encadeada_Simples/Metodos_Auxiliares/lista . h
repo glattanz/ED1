@@ -2,7 +2,7 @@
 
 struct lista {
  int info;
- //recursivamente, chama a struct. Essa vari·vel guarda uma info.
+ //recursivamente, chama a struct. Essa vari√°vel guarda uma info.
  struct lista* prox;
 };
 
