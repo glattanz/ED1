@@ -27,3 +27,5 @@ Lista* removeInicio (Lista* l, int v);
 int tamanho(Lista* l);
 
 Lista* retira_rec (Lista* l, int v);
+
+void libera_rec (Lista* l);
