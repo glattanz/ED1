@@ -12,6 +12,9 @@ int menu(){
 	printf("5 - Remove elemento do inicio da lista\n");
 	printf("6 - Remove elemento do fim da lista\n");
 	printf("7 - Inserir no fim\n");
+	printf("8 - Remove recursivo\n");
+	printf("9 - Libera recursivo\n");
+	printf("10 - Imprime recursivo\n");
 	
 	printf("Insira a opção desejada: ");
 	scanf("%d", &op);
@@ -73,12 +76,25 @@ int main(int argc, char** argv) {
 				scanf("%d", x);
 				
 				l = insereFim(l, x);
+			
+			case 8:
+				
+				printf("Informe o valor a ser remmovido:")
+				scanf("%d", x);
+				
+				l = retira_rec(l, x);
+				
+			case 9:
+				libera_rec(l);
+				
+			case 10:
+				imprime(Lista* l);
 				
 			default:
 				printf("\nInsira uma das opções acima!"\n);
 				
 		}
-	}while(op > 0 && op < 8);
+	}while(op > 0 && op < 11);
 	
 	return 0;
 }
