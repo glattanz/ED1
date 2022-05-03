@@ -22,6 +22,14 @@ void imprime(Lista* l);
 
 Lista* retira(Lista* l, int v);
 
+Lista* busca (Lista* l, int v);
 
+void quant (Lista*l);
 
+Lista* remove_inicio(Lista* l);
 
+Lista* remove_fim(Lista* l);
+
+void imprime_inicio(Lista* l);
+
+void imprime_fim(Lista* l);

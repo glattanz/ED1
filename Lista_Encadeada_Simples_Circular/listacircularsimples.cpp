@@ -1,7 +1,10 @@
 //Aula ED - prof. Irineu
 //lista_simples_circular.cpp
+#include <iostream>
 #include "listacircularsimples.h"
+#include <locale.h>
 
+using namespace std;
 
 /* função de inicialização: retorna uma lista vazia */
 Lista* inicializa(){ //ok
@@ -58,7 +61,7 @@ void imprime(Lista* l){
 		}while(p !=l->prox); 
 		printf("\n"); 
 	}else printf("Lista é vazia!\n");
-	return l;
+	
 }
 
 //QUANDO RETIRA TUDO FINALIZA O CODIGO
@@ -102,6 +105,7 @@ Lista* retira (Lista* l, int v) {
 	return l;
 }
 
+//NÃO PRINTOU NADA
 Lista* busca (Lista* l, int v){
  Lista* p; //variavel para andar
 	for (p=l; p!=NULL; p=p->prox){
@@ -110,21 +114,24 @@ Lista* busca (Lista* l, int v){
 	 	cout << "Elemento encontrado!" << endl;
 	}
 }
-	 
+	//cODIGO TRAVOU?? 
 	return NULL; /* não achou o elemento */
 	cout << "Elemento não encontrado." << endl;
 }
 
-Lista*quant (Lista*l, int v){
+//cODIGO TRAVOU?? 
+void quant (Lista*l){
 	Lista* p; //variavel para andar
+	int qtd;
 	for (p=l; p!=NULL; p=p->prox)
-		int qtd++;
+		qtd++;
 	
 	cout << "A lista possui:" << qtd << "elementos" << endl;
 
 }
 
-Lista* remove_inicio(Lista* l, int i){
+//remove o ultimo
+Lista* remove_inicio(Lista* l){
 	//l é ponteiro para último nó-dado, l->prox estará apontando para 1o nó-dado
 	
 	//testar se é o primeiro encadeamento
@@ -141,7 +148,9 @@ Lista* remove_inicio(Lista* l, int i){
 	
 }
 
-Lista* remove_fim(Lista* l, int i){
+//FINALIZA O PROGRAMA
+//verificar se está removendo o ultimo
+Lista* remove_fim(Lista* l){
 	
 	//testar se é o primeiro encadeamento
 	if (vazia(l)){
@@ -161,5 +170,33 @@ Lista* remove_fim(Lista* l, int i){
 	
 }
 
+void imprime_inicio(Lista* l){
+	//l é ponteiro para último nó-dado, l->prox estará apontando para 1o nó-dado
+	
+	//testar se é o primeiro encadeamento
+	if (vazia(l)){
+		cout << "Lista vazia!" << endl;
+	}else{
+		printf("%d", l->info);
+	}
+	
+}
 
-
+void imprime_fim(Lista* l){
+	
+	//testar se é o primeiro encadeamento
+	if (vazia(l)){
+		cout << "Lista vazia!" << endl;
+	}else{
+		Lista* p = (Lista*) malloc(sizeof(Lista));
+		
+		for (p=l; p!=NULL; p=p->prox){
+			if(p->prox==l || p->prox==NULL){
+				printf("%d", l->prox->info);
+				break;
+			}
+		}
+		
+	}
+	
+}

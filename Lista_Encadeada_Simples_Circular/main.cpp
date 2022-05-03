@@ -13,9 +13,13 @@ void menu(){
 	cout << "2- Inserir no fim" <<endl;
 	cout << "3- Verificar se há elementos" <<endl;
 	cout << "4- Imprimir" <<endl;
-	cout << "5- Retira" <<endl;
-	//cout << "6- Print" <<endl;
-	//cout << "7- Free" << endl;
+	cout << "5- Remove valor selecionado" <<endl;
+	cout << "6- Buscar um elemento" <<endl;
+	cout << "7- Verificar a quantidade de elementos" << endl;
+	cout << "8- Remove no início" <<endl;
+	cout << "9- Remove no fim" <<endl;
+	cout << "10- Imprimir primeiro elemento" <<endl;
+	cout << "11- Imprimir último elemento" <<endl;
 	cout << "Other to quit" << endl;
 	cout << "=======================" << endl;
 }
@@ -83,13 +87,33 @@ int main(int argc, char** argv) {
 				cin >> x;
 				busca(l, x);			
 				break;
-				
+			
+			case 7:
+				quant(l);			
+				break;
+			
+			case 8:
+				remove_inicio(l);			
+				break;
+			
+			case 9:
+				remove_fim(l);			
+				break;
+			
+			case 10:
+				imprime_inicio(l);			
+				break;
+			
+			case 11:
+				imprime_fim(l);			
+				break;
+			
 			default: 
-				cout<<"Selecione uma das opções acima"<< endl;
+				cout<<"Selecione uma das opções acima!"<< endl;
 		
 		}cout << endl;
 		
-	}while(op > 0 && op < 8);	
+	}while(op > 0 && op < 12);	
 	
 	cout << "Fim do programa!" << endl;
 	
