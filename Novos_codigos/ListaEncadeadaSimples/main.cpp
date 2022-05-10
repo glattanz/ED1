@@ -1,4 +1,6 @@
+#include "listaencadeadasimples.h"
 #include <iostream>
+#include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -28,28 +30,39 @@ int main(int argc, char** argv) {
 		cin >> op;
 		
 		switch(op){
+			
 			case 1:
 				int x;
+				
 				cout << "Informe o valor a ser inserido: ";
 				cin >> x;
+				
 				//Retornamos o endereço de novo para o l (início)
 				l = insere_inicio(l, x);
+				
 				break;
+				
 			case 2:
 				imprime(l);
+				
 				break;
+				
 			case 3:
 				//Se a função for verdade:
 				if (IsEmpty(l))
 					cout << "Lista é vazia!\n";
 				else 
 					cout << "Lista não é vazia!\n";
-				break;			
-			case 4:
-				cout << "Tamanho da Lista eh " << tamanho(l) << endl;
+					
 				break;	
+						
+			case 4:
+				cout << "Tamanho da Lista é: " << tamanho(l) << endl;
+				
+				break;	
+				
 			default:
-				cout << "Opcao invalida! \n";	
+				cout << "Opção invalida! \n";	
 		}  
 		
 	}while(op > 0 && op < 5);

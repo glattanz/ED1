@@ -1,5 +1,6 @@
-#include "lista_simples.h"
-#include "stdlib.h"
+#include "listaencadeadasimples.h"
+#include <iostream>
+#include <stdlib.h>
 
 //Função tipo ponteiro de Lista para retornar a lista atualizada
 Lista* inicializa(){
@@ -8,7 +9,7 @@ Lista* inicializa(){
 
 //Função tipo ponteiro de Lista para retornar a lista atualizada
 //PARÂMETROS: Passamos a lista atual e o número passado pelo usuário 
-Lista* insere_inicio(Lista* l, int l){
+Lista* insere_inicio(Lista* l, int i){
 	
 	//Criamos um novo nó de dado
 	Lista* novo = (Lista*) malloc(sizeof(Lista));
@@ -37,8 +38,20 @@ void imprime(Lista* l){
 	
 }
 
+//Função booleana, se a condição da linha 44 for verdadeira ela se porta como verdadeira em testes condicionais
 //PARÂMETROS: Passamos a lista atual
 bool IsEmpty(Lista* l){
-	//Se l = NULL, retorna vazia (0)
+	//Se l = NULL, retorna vazia (FALSE)
 	return l == NULL;
+}
+
+//PARÂMETROS: Passamos a lista atual
+int tamanho(Lista* l){
+	int cont=0;
+	
+	//Condição para percorrer a lista, explicada na linha 30 e 31
+	for(Lista* p = l; p != NULL; p = p->prox){
+		cont++;
+	}
+	return cont;
 }
