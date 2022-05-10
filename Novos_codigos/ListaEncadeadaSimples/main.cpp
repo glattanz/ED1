@@ -9,7 +9,9 @@ void menu(){
 	cout << "2- Imprimir" << endl;
 	cout << "3- Verifica Lista se eh vazia" << endl;
 	cout << "4- Tamanho da Lista" << endl;
-	cout << "? ";	
+	cout << "5- Mostrar inÃ­cio" << endl;
+	cout << "6- Mostrar fim" << endl;
+	cout << "? " << endl;
 }
 
 int main(int argc, char** argv) {
@@ -17,16 +19,16 @@ int main(int argc, char** argv) {
 	//3. Declara a lista
 	Lista* l;
 	
-	//4. Inicia a lista n. l está apontando pra NULL.
+	//4. Inicia a lista n. l estÃ¡ apontando pra NULL.
 	l = inicializa();
 	
-	//Variável para receber o valor informado pelo usuário do menu
+	//VariÃ¡vel para receber o valor informado pelo usuÃ¡rio do menu
 	int op(0);
 	
 	do{
 		//Printa o menu
 		menu();
-		//5. Pede a alternativa do menu para o usuário
+		//5. Pede a alternativa do menu para o usuÃ¡rio
 		cin >> op;
 		
 		switch(op){
@@ -37,7 +39,7 @@ int main(int argc, char** argv) {
 				cout << "Informe o valor a ser inserido: ";
 				cin >> x;
 				
-				//Retornamos o endereço de novo para o l (início)
+				//Retornamos o endereÃ§o de novo para o l (inÃ­cio)
 				l = insere_inicio(l, x);
 				
 				break;
@@ -48,24 +50,34 @@ int main(int argc, char** argv) {
 				break;
 				
 			case 3:
-				//Se a função for verdade:
+				//Se a funÃ§Ã£o for verdade:
 				if (IsEmpty(l))
-					cout << "Lista é vazia!\n";
+					cout << "Lista Ã© vazia!\n" << endl;
 				else 
-					cout << "Lista não é vazia!\n";
+					cout << "Lista nÃ£o Ã© vazia!\n" << endl;
 					
 				break;	
 						
 			case 4:
-				cout << "Tamanho da Lista é: " << tamanho(l) << endl;
+				cout << "Tamanho da Lista Ã©: " << tamanho(l) << endl;
+				
+				break;	
+			
+			case 5:
+				mostra_inicio(l);
+				
+				break;
+			
+			case 6:
+				mostra_fim(l);
 				
 				break;	
 				
 			default:
-				cout << "Opção invalida! \n";	
+				cout << "OpÃ§Ã£o invalida! \n";	
 		}  
 		
-	}while(op > 0 && op < 5);
+	}while(op > 0 && op < 10);
 	
 	cout << "Fim de programa!\n"; 
 	
