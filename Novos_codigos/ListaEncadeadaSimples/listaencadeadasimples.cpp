@@ -2,35 +2,35 @@
 #include <iostream>
 #include <stdlib.h>
 
-//Função tipo ponteiro de Lista para retornar a lista atualizada
+//FunÃ§Ã£o tipo ponteiro de Lista para retornar a lista atualizada
 Lista* inicializa(){
 	return NULL;
 }
 
-//Função tipo ponteiro de Lista para retornar a lista atualizada
-//PARÂMETROS: Passamos a lista atual e o número passado pelo usuário 
+//FunÃ§Ã£o tipo ponteiro de Lista para retornar a lista atualizada
+//PARÃ‚METROS: Passamos a lista atual e o nÃºmero passado pelo usuÃ¡rio 
 Lista* insere_inicio(Lista* l, int i){
 	
-	//Criamos um novo nó de dado
+	//Criamos um novo nÃ³ de dado
 	Lista* novo = (Lista*) malloc(sizeof(Lista));
-	//Inserimos o valor passado no info do novo nó
+	//Inserimos o valor passado no info do novo nÃ³
 	novo->info = i;
-	//O prox do novo recebe o nó de dado anterior ou o NULL
+	//O prox do novo recebe o nÃ³ de dado anterior ou o NULL
 	novo->prox = l;
 	
-	//Retornamos o endereço de novo
+	//Retornamos o endereÃ§o de novo
 	return novo;
 }
 
-//PARÂMETROS: Passamos a lista atual
+//PARÃ‚METROS: Passamos a lista atual
 void imprime(Lista* l){
 	
 	if(IsEmpty(l))
 		cout << "Lista vazia!";
 	else{
-		//PARÂMETROS: Criamos um novo ponteiro para percorrer a lista e inicializamos ele em l (início)
-		//Enquanto p for diferente de NULL (fim da lista), p avança para o próximo nó
-		for(Lista* p = l; p!=NULL; p->prox){
+		//PARÃ‚METROS: Criamos um novo ponteiro para percorrer a lista e inicializamos ele em l (inÃ­cio)
+		//Enquanto p for diferente de NULL (fim da lista), p avanÃ§a para o prÃ³ximo nÃ³
+		for(Lista* p = l; p!=NULL; p = p->prox){
 			cout << p->info << " - " ;
 		}
 	}
@@ -38,20 +38,44 @@ void imprime(Lista* l){
 	
 }
 
-//Função booleana, se a condição da linha 44 for verdadeira ela se porta como verdadeira em testes condicionais
-//PARÂMETROS: Passamos a lista atual
+//FunÃ§Ã£o booleana, se a condiÃ§Ã£o da linha 44 for verdadeira ela se porta como verdadeira em testes condicionais
+//PARÃ‚METROS: Passamos a lista atual
 bool IsEmpty(Lista* l){
 	//Se l = NULL, retorna vazia (FALSE)
 	return l == NULL;
 }
 
-//PARÂMETROS: Passamos a lista atual
+//PARÃ‚METROS: Passamos a lista atual
 int tamanho(Lista* l){
 	int cont=0;
 	
-	//Condição para percorrer a lista, explicada na linha 30 e 31
+	//CondiÃ§Ã£o para percorrer a lista, explicada na linha 30 e 31
 	for(Lista* p = l; p != NULL; p = p->prox){
 		cont++;
 	}
 	return cont;
+}
+
+void mostra_inicio(Lista* l){
+	
+	if(IsEmpty(l))
+		cout << "Lista vazia!";
+	else{
+		cout << "Primeiro elemento: " << l->info;
+	}
+	
+}
+
+void mostra_fim(Lista* l){
+	
+	Lista* p;
+	
+	if(IsEmpty(l))
+		cout << "Lista vazia!";
+	else{
+		for(p = l; p != NULL; p = p->prox);
+		
+		cout << "Ãšltimo elemento: " << p->info;
+	}
+	
 }
