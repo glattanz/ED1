@@ -3,14 +3,14 @@
 
 using namespace std;
 
-//1. Declara o tipo do n√≥ de dado
+//1. Declara o tipo do nÛ de dado
 struct lista{
 	
 	int info;
 	struct lista* prox;
 	
 };
-typedef struct lista Lista; //2. Transforma o n√≥ de dado em tipo de vari√°vel
+typedef struct lista Lista; //2. Transforma o nÛ de dado em tipo de vari·vel
 
 Lista* inicializa();
 
@@ -25,3 +25,9 @@ int tamanho(Lista* l);
 void mostra_inicio(Lista* l);
 
 void mostra_fim(Lista* l);
+
+void ocorrencias(Lista* l, int v);
+
+Lista* insere_fim(Lista*l, int i);
+
+Lista* remove_inicio(Lista* l);
