@@ -31,3 +31,5 @@ void ocorrencias(Lista* l, int v);
 Lista* insere_fim(Lista*l, int i);
 
 Lista* remove_inicio(Lista* l);
+
+Lista* remove_fim(Lista* l);
